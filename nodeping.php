@@ -122,7 +122,15 @@
 
 			$result = file_get_contents( $url, false, $context );
 
+			if ( $result === false ) {
+				throw new Nodeping_Exception('Error while getting a response from Nodeping');
+			}
+
 			$result = json_decode( $result );
+
+			if ( isset( $result->error ) ) {
+				throw new Nodeping_Exception( $result->error );
+			}
 
 			return $result;
 
@@ -145,6 +153,8 @@
 		}
 
 	}
+
+	class Nodeping_Exception extends Exception {}
 
 	class Nodeping_Result {
 
