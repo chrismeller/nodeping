@@ -221,7 +221,7 @@
 				$this->id = $result->_id;
 				$this->type = $result->t;
 				$this->customer_id = $result->ci;
-				$this->target = $result->tg;
+				$this->target = isset( $result->tg ) ? $result->tg : null;
 				$this->threshold = $result->th;
 				$this->interval = $result->i;
 				$this->scheduled_ts = $result->ra;
