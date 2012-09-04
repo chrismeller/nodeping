@@ -346,7 +346,7 @@
 				$this->parameters = $result->parameters;
 				$this->uuid = $result->uuid;
 				$this->status = $result->status;
-				$this->queue = $result->queue;
+				$this->queue = isset( $result->queue ) ? $result->queue : null;
 				$this->description = isset( $result->description ) ? $result->description : null;
 
 				// parse out the textual 'enable' field and create a boolean enabled for convenience
