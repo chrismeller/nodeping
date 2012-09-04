@@ -30,6 +30,20 @@
 
 		}
 
+		public function get_account ( $account_id ) {
+
+			$options = array(
+				'customerid' => $account_id,
+			);
+
+			$url = $this->build_url( 'accounts', $options );
+
+			$account = $this->get( $url );
+
+			return $account;
+
+		}
+
 		/**
 		 * Get all the checks for your account.
 		 *
