@@ -30,6 +30,11 @@
 
 		}
 
+		/**
+		 * Get all the checks for your account.
+		 *
+		 * @return Nodeping_Check[] Array of Nodeping_Check objects.
+		 */
 		public function get_checks ( ) {
 
 			$url = $this->build_url( 'checks' );
@@ -57,7 +62,7 @@
 		 * @param string $check_id The ID of the check to fetch results for.
 		 * @param int $span Number of hours to retrieve results for.
 		 * @param int $limit Number of records to retrieve. Defaults to 300. Max 43201.
-		 * @return array Array of Nodeping_Result objects.
+		 * @return Nodeping_Result[] Array of Nodeping_Result objects.
 		 */
 		public function get_check_results ( $check_id, $span = null, $limit = null ) {
 
